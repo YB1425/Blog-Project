@@ -2,9 +2,45 @@
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
+  <style>
+    body {
+      background-color: darkgrey;
+      color: darkslategrey;
+      text-align: center;
+    }
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: blanchedalmond;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  </style>
 </head>
 <body>
-{% block content %}
-{% endblock %}
+
+<div class="navbar">
+  <a href="/">HOME</a>
+  <a href="http://127.0.0.1:8000/users/">Users</a>
+  <a href="http://127.0.0.1:8000/posts/">Posts</a>
+  <a href="http://127.0.0.1:8000/comments/">Comments</a>
+  <a href="http://127.0.0.1:8000/categories/">Categories</a>
+  <a href="http://127.0.0.1:8000/admin/">Admin page</a>
+</div>
+
+<div>
+  {% block content %}
+  {% endblock %}
+</div>
+
 </body>
 </html>

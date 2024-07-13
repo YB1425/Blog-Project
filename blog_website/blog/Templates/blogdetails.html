@@ -9,7 +9,19 @@
 <h1>{{ post.post_title }}</h1>
     <p><strong>Category:</strong> {{ post.post_category }}</p>
     <p><strong>Date Published:</strong> {{ post.post_publish_date }}</p>
-    <p>{{ post.post_content }}</p>
-</ol>
+    <p>Content: <br>{{ post.post_content }}</p>
+
+
+<h2>Comments:</h2>
+<ul>
+  {% for comment in post.comments.all %}
+    <li>
+      <strong>{{ comment.user.username }}</strong> - {{ comment.date_posted|date:"F d, Y H:i" }}<br>
+      {{ comment.content }}
+    </li>
+  {% empty %}
+    <li>No comments yet.</li>
+  {% endfor %}
+</ul>
 
 {% endblock %}

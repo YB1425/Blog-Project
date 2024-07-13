@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "master.html" %}
+
+{% block title %}
+  List of all categories
+{% endblock %}
+
+{% block content %}
+
+<h1>Blog Posts categories </h1>
+
+<ol>
+  {% for x in all_categories %}
+    <li>{{ x.name }} </li>
+  {% endfor %}
+</ol>
+
+{% endblock %}
