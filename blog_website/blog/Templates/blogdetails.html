@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+  {{ post.post_title }}
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ post.post_title }}</h1>
+    <p><strong>Category:</strong> {{ post.post_category }}</p>
+    <p><strong>Date Published:</strong> {{ post.post_publish_date }}</p>
+    <p>{{ post.post_content }}</p>
+</ol>
+
+{% endblock %}
